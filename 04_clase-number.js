@@ -10,7 +10,7 @@ const cientifico = 5e3
 const infinito = Infinity
 const noEsUnNumero = NaN
 
-// Operaciones aritméticas
+// OPERACIONES ARITMÉTICAS
 
 // 1. Suma, resta, multiplicación, división
 
