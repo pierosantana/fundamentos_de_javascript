@@ -30,6 +30,7 @@ function createCounter () {
 const counterA = createCounter()
 counterA()
 counterA()
+counterA()
 
 const counterB = createCounter()
 counterB()
@@ -48,3 +49,31 @@ const closureB = outer()
 
 closureA("Alice") // Hello, Alice
 closureA("Bob") // Hello, Bob
+
+
+// Contador privado
+function createCounter() {
+    // Variable “privada” al alcance del closure
+    let count = 0
+  
+    return {
+      increment() {
+        count++
+      },
+      get() {
+        return count;
+      }
+    }
+  }
+  
+  // Uso:
+  const counter = createCounter()
+  counter.increment()
+  counter.increment()
+  console.log(counter.get()) // 2
+  // “count” no es accesible desde fuera: counter.count === undefined
+
+  const counter2 = createCounter()
+  console.log(counter2.get()) // 0
+  counter2.increment()
+  console.log(counter2.get()) // 1 
